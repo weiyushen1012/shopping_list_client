@@ -13,15 +13,19 @@ function Login(): JSX.Element {
 
   const LoginPageStyle: CSS.Properties = {
     display: 'flex',
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
     width: '100vw',
   };
 
   const LoginFormStyle: CSS.Properties = {
     width: isSmallScreen ? 'auto' : '500px',
-    padding: '1em 1em 4em 1em',
+    marginBottom: '10em',
+  };
+
+  const LoginFormButtonStyle: CSS.Properties = {
+    width: '120px',
   };
 
   async function handleFinish(values: LoginValuesType) {
@@ -59,8 +63,17 @@ function Login(): JSX.Element {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 5, span: 20 }}>
-            <Button type="primary" htmlType="submit">
+          <Form.Item
+            wrapperCol={{
+              offset: isSmallScreen ? 0 : 5,
+              span: isSmallScreen ? 25 : 20,
+            }}
+          >
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={LoginFormButtonStyle}
+            >
               Log In
             </Button>
           </Form.Item>
