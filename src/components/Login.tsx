@@ -2,7 +2,11 @@ import React from 'react';
 import CSS from 'csstype';
 import { Form, Input, Button, Alert } from 'antd';
 import { useMediaQuery } from '../hooks/useMediaQuery';
-import { LoginValuesType, userStore, UserStore } from '../store/UserStore';
+import {
+  AuthenticationValuesType,
+  userStore,
+  UserStore,
+} from '../store/UserStore';
 import { observer } from 'mobx-react';
 
 type StoreType = {
@@ -11,7 +15,7 @@ type StoreType = {
 
 const Login = observer(
   ({ userStore }: StoreType): JSX.Element => {
-    const isSmallScreen = useMediaQuery('(max-width: 600px)');
+    const isSmallScreen = useMediaQuery('(max-width: 700px)');
 
     const LoginPageStyle: CSS.Properties = {
       display: 'flex',
@@ -22,7 +26,9 @@ const Login = observer(
     };
 
     const LoginFormStyle: CSS.Properties = {
-      width: isSmallScreen ? 'auto' : '400px',
+      width: isSmallScreen ? '100%' : '400px',
+      paddingLeft: isSmallScreen ? '1em' : 0,
+      paddingRight: isSmallScreen ? '1em' : 0,
       marginBottom: '10em',
     };
 
@@ -36,8 +42,8 @@ const Login = observer(
       marginBottom: '1em',
     };
 
-    function handleFinish(values: LoginValuesType) {
-      userStore.login(values);
+    async function handleFinish(values: AuthenticationValuesType) {
+      await userStore.login(values);
     }
 
     return (

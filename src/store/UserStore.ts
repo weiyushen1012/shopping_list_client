@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
-export type LoginValuesType = {
+export type AuthenticationValuesType = {
   email: string;
   password: string;
 };
@@ -15,7 +15,7 @@ type LoginFailureData = {
   message: string;
 };
 
-const endpoint = 'http://localhost:5000/login';
+const endpoint = 'http://localhost:5000';
 
 export class UserStore {
   token: string = '';
@@ -29,14 +29,45 @@ export class UserStore {
     makeAutoObservable(this);
   }
 
-  async login(values: LoginValuesType) {
+  async signup(values: AuthenticationValuesType) {
     try {
       runInAction(() => {
         this.error = '';
         this.loading = true;
       });
 
-      const response: Response = await fetch(endpoint, {
+      const response: Response = await fetch(`${endpoint}/add_user`, {
+        method: 'POST',
+        body: JSON.stringify(values),
+      });
+
+      const status = response.status;
+
+      if (status === 200) {
+        await this.login(values);
+      } else {
+        const errorData: LoginFailureData = await response.json();
+        runInAction(() => {
+          this.error = errorData.message;
+          this.loading = false;
+        });
+      }
+    } catch (e) {
+      runInAction(() => {
+        this.error = 'Not able to connect to server';
+        this.loading = false;
+      });
+    }
+  }
+
+  async login(values: AuthenticationValuesType) {
+    try {
+      runInAction(() => {
+        this.error = '';
+        this.loading = true;
+      });
+
+      const response: Response = await fetch(`${endpoint}/login`, {
         method: 'POST',
         body: JSON.stringify(values),
       });

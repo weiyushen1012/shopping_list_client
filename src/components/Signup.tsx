@@ -2,7 +2,11 @@ import React from 'react';
 import CSS from 'csstype';
 import { Form, Input, Button, Alert } from 'antd';
 import { useMediaQuery } from '../hooks/useMediaQuery';
-import { LoginValuesType, userStore, UserStore } from '../store/UserStore';
+import {
+  AuthenticationValuesType,
+  userStore,
+  UserStore,
+} from '../store/UserStore';
 import { observer } from 'mobx-react';
 
 type StoreType = {
@@ -11,9 +15,9 @@ type StoreType = {
 
 const Signup = observer(
   ({ userStore }: StoreType): JSX.Element => {
-    const isSmallScreen = useMediaQuery('(max-width: 600px)');
+    const isSmallScreen = useMediaQuery('(max-width: 700px)');
 
-    const LoginPageStyle: CSS.Properties = {
+    const SignupPageStyle: CSS.Properties = {
       display: 'flex',
       flexGrow: 1,
       justifyContent: 'center',
@@ -21,12 +25,14 @@ const Signup = observer(
       width: '100vw',
     };
 
-    const LoginFormStyle: CSS.Properties = {
-      width: isSmallScreen ? 'auto' : '500px',
+    const SignupFormStyle: CSS.Properties = {
+      width: isSmallScreen ? '100%' : '400px',
+      paddingLeft: isSmallScreen ? '1em' : 0,
+      paddingRight: isSmallScreen ? '1em' : 0,
       marginBottom: '10em',
     };
 
-    const LoginFormButtonStyle: CSS.Properties = {
+    const SignupFormButtonStyle: CSS.Properties = {
       width: '100%',
       marginTop: '2em',
     };
@@ -36,13 +42,13 @@ const Signup = observer(
       marginBottom: '1em',
     };
 
-    function handleFinish(values: LoginValuesType) {
-      userStore.login(values);
+    async function handleFinish(values: AuthenticationValuesType) {
+      await userStore.signup(values);
     }
 
     return (
-      <div style={LoginPageStyle}>
-        <div style={LoginFormStyle}>
+      <div style={SignupPageStyle}>
+        <div style={SignupFormStyle}>
           <Alert
             message={userStore.error}
             type="error"
@@ -95,7 +101,7 @@ const Signup = observer(
               <Button
                 type="primary"
                 htmlType="submit"
-                style={LoginFormButtonStyle}
+                style={SignupFormButtonStyle}
                 loading={userStore.loading}
               >
                 Sign Up
