@@ -18,7 +18,7 @@ const Navbar = observer(
 
     const buttonStyle: CSS.Properties = {
       width: '120px',
-      display: userStore.isLoggedIn ? 'none' : 'block',
+      display: userStore.isLoggedIn ? 'none' : 'inline',
     };
 
     const avatarStyle: CSS.Properties = {
@@ -38,7 +38,10 @@ const Navbar = observer(
           >
             Log In
           </Button>,
-          <span key="2" style={avatarStyle}>
+          <Button key="2" style={buttonStyle} type="primary">
+            Sign Up
+          </Button>,
+          <span key="3" style={avatarStyle}>
             <Avatar icon={<UserOutlined />} />
             {userStore.email}
           </span>,

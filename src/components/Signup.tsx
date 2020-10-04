@@ -9,7 +9,7 @@ type StoreType = {
   userStore: UserStore;
 };
 
-const Login = observer(
+const Signup = observer(
   ({ userStore }: StoreType): JSX.Element => {
     const isSmallScreen = useMediaQuery('(max-width: 600px)');
 
@@ -22,7 +22,7 @@ const Login = observer(
     };
 
     const LoginFormStyle: CSS.Properties = {
-      width: isSmallScreen ? 'auto' : '400px',
+      width: isSmallScreen ? 'auto' : '500px',
       marginBottom: '10em',
     };
 
@@ -66,6 +66,30 @@ const Login = observer(
             >
               <Input.Password />
             </Form.Item>
+            <Form.Item
+              name="confirm"
+              label="Confirm Password"
+              dependencies={['password']}
+              hasFeedback
+              rules={[
+                {
+                  required: true,
+                  message: 'Please confirm your password!',
+                },
+                ({ getFieldValue }) => ({
+                  validator(rule, value) {
+                    if (!value || getFieldValue('password') === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      'The two passwords that you entered do not match!'
+                    );
+                  },
+                }),
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
 
             <Form.Item>
               <Button
@@ -74,7 +98,7 @@ const Login = observer(
                 style={LoginFormButtonStyle}
                 loading={userStore.loading}
               >
-                Log In
+                Sign Up
               </Button>
             </Form.Item>
           </Form>
@@ -84,4 +108,4 @@ const Login = observer(
   }
 );
 
-export default () => <Login userStore={userStore} />;
+export default () => <Signup userStore={userStore} />;

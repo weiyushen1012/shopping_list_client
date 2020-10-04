@@ -6,6 +6,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import { userStore, UserStore } from './store/UserStore';
 import { observer } from 'mobx-react';
+import Signup from './components/Signup';
 
 type StoreType = {
   userStore: UserStore;
@@ -34,6 +35,7 @@ const App = observer(
         <Navbar />
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
           <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </div>

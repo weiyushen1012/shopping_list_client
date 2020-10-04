@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba96a672-ec6d-4585-8860-af2372db81d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Signup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/UserStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UserStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <updated>1601682457421</updated>
       <workItem from="1601682458718" duration="564000" />
       <workItem from="1601683078243" duration="19110000" />
-      <workItem from="1601787747297" duration="1006000" />
+      <workItem from="1601787747297" duration="2145000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1601683367491</created>
@@ -149,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601787347414</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add logged in avatar">
+      <created>1601789098425</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601789098425</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +182,8 @@
     <MESSAGE value="add mobx for store management" />
     <MESSAGE value="login error handling" />
     <MESSAGE value="should redirect to dashboard after logging in" />
-    <option name="LAST_COMMIT_MESSAGE" value="should redirect to dashboard after logging in" />
+    <MESSAGE value="add logged in avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logged in avatar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="322" key="#Prettier" timestamp="1601683015078">
@@ -186,6 +194,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1601746146266" />
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1601789149291">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1601789149291" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1601787897688">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -254,9 +266,9 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1601683225946" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601787354530">
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601789105977">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1601787354530" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1601789105977" />
   </component>
 </project>
