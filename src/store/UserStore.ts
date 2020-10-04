@@ -55,7 +55,7 @@ export class UserStore {
       }
     } catch (e) {
       runInAction(() => {
-        this.error = e;
+        this.error = 'Not able to connect to server';
         this.loading = false;
       });
     }

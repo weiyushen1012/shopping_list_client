@@ -80,6 +80,7 @@ const Login = observer(
                 type="primary"
                 htmlType="submit"
                 style={LoginFormButtonStyle}
+                loading={userStore.loading}
               >
                 Log In
               </Button>

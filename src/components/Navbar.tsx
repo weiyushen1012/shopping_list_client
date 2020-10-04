@@ -22,7 +22,6 @@ const Navbar = observer(
 
     return (
       <PageHeader
-        onBack={() => window.history.back()}
         className="site-page-header"
         title="Shopping List"
         subTitle={isSmallScreen ? '' : 'Make your shopping plan smarter'}
