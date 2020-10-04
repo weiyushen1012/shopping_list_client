@@ -1,40 +1,65 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 
 export type LoginValuesType = {
   email: string;
   password: string;
 };
 
-type LoginSuccessMessage = {
+type LoginSuccessData = {
   token: string;
+};
+
+type LoginFailureData = {
+  message: string;
 };
 
 const endpoint = 'http://localhost:5000/login';
 
 export class UserStore {
   token: string = '';
-  loggedIn: boolean = false;
+  isLoggedIn: boolean = false;
+  error: string = '';
+  loading: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  login = async (values: LoginValuesType) => {
+  async login(values: LoginValuesType) {
     try {
-      const response = await fetch(endpoint, {
+      runInAction(() => {
+        this.error = '';
+        this.loading = true;
+      });
+
+      const response: Response = await fetch(endpoint, {
         method: 'POST',
         body: JSON.stringify(values),
       });
-      const message: LoginSuccessMessage = await response.json();
-      this.token = message.token;
 
-      this.loggedIn = true;
+      const status = response.status;
 
-      console.log(this);
+      if (status === 200) {
+        const data: LoginSuccessData = await response.json();
+        runInAction(() => {
+          this.token = data.token;
+          this.isLoggedIn = true;
+          this.loading = false;
+        });
+      } else {
+        const errorData: LoginFailureData = await response.json();
+        runInAction(() => {
+          this.error = errorData.message;
+          this.loading = false;
+        });
+      }
     } catch (e) {
-      console.error(e);
+      runInAction(() => {
+        this.error = e;
+        this.loading = false;
+      });
     }
-  };
+  }
 }
 
 export const userStore = new UserStore();

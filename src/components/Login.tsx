@@ -1,6 +1,6 @@
 import React from 'react';
 import CSS from 'csstype';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Alert } from 'antd';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { LoginValuesType, userStore, UserStore } from '../store/UserStore';
 import { observer } from 'mobx-react';
@@ -30,6 +30,11 @@ const Login = observer(
       width: '120px',
     };
 
+    const alertStyles: CSS.Properties = {
+      display: !!userStore.error ? 'block' : 'none',
+      marginBottom: '1em',
+    };
+
     function handleFinish(values: LoginValuesType) {
       userStore.login(values);
     }
@@ -37,6 +42,12 @@ const Login = observer(
     return (
       <div style={LoginPageStyle}>
         <div style={LoginFormStyle}>
+          <Alert
+            message={userStore.error}
+            type="error"
+            showIcon
+            style={alertStyles}
+          />
           <Form
             labelCol={{ span: 5 }}
             wrapperCol={{ span: 20 }}
