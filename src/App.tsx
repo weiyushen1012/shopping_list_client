@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import CSS from 'csstype';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-function App(): JSX.Element {
+const App = (): JSX.Element => {
   const AppStyle: CSS.Properties = {
     display: 'flex',
     flexDirection: 'column',
@@ -13,16 +13,14 @@ function App(): JSX.Element {
 
   return (
     <div style={AppStyle}>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Route path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
