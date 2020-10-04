@@ -7,6 +7,8 @@ export type LoginValuesType = {
 
 type LoginSuccessData = {
   token: string;
+  email: string;
+  userId: string;
 };
 
 type LoginFailureData = {
@@ -20,6 +22,8 @@ export class UserStore {
   isLoggedIn: boolean = false;
   error: string = '';
   loading: boolean = false;
+  email: string | null = null;
+  userId: number | null = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -41,10 +45,13 @@ export class UserStore {
 
       if (status === 200) {
         const data: LoginSuccessData = await response.json();
+
         runInAction(() => {
           this.token = data.token;
           this.isLoggedIn = true;
           this.loading = false;
+          this.email = data.email;
+          this.userId = parseInt(data.userId);
         });
       } else {
         const errorData: LoginFailureData = await response.json();

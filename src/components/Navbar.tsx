@@ -1,10 +1,11 @@
 import React from 'react';
 import CSS from 'csstype';
-import { PageHeader, Button } from 'antd';
+import { PageHeader, Button, Avatar } from 'antd';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { observer } from 'mobx-react';
 import { userStore, UserStore } from '../store/UserStore';
 import { useHistory } from 'react-router-dom';
+import { UserOutlined } from '@ant-design/icons';
 
 type StoreType = {
   userStore: UserStore;
@@ -20,6 +21,10 @@ const Navbar = observer(
       display: userStore.isLoggedIn ? 'none' : 'block',
     };
 
+    const avatarStyle: CSS.Properties = {
+      display: userStore.isLoggedIn ? 'inline-block' : 'none',
+    };
+
     return (
       <PageHeader
         className="site-page-header"
@@ -33,6 +38,10 @@ const Navbar = observer(
           >
             Log In
           </Button>,
+          <span key="2" style={avatarStyle}>
+            <Avatar icon={<UserOutlined />} />
+            {userStore.email}
+          </span>,
         ]}
       />
     );
