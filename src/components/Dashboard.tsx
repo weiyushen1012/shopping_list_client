@@ -2,10 +2,26 @@ import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import { useHistory } from 'react-router-dom';
 import { userStore, UserStore } from '../store/UserStore';
+import { Table } from 'antd';
 
 type StoreType = {
   userStore: UserStore;
 };
+
+const columns = [
+  {
+    title: 'Name',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Quantity',
+    dataIndex: 'quantity',
+  },
+  {
+    title: 'Category',
+    dataIndex: 'category',
+  },
+];
 
 const Dashboard = observer(
   ({ userStore }: StoreType): JSX.Element => {
@@ -18,7 +34,7 @@ const Dashboard = observer(
       }
     }, [isLoggedIn, history]);
 
-    return <div />;
+    return <Table columns={columns} dataSource={[]} />;
   }
 );
 

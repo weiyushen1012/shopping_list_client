@@ -1,7 +1,7 @@
 import React from 'react';
 import CSS from 'csstype';
 import { PageHeader, Button, Avatar } from 'antd';
-import { useMediaQuery } from '../hooks/useMediaQuery';
+import { SMALL_SCREEN_WIDTH, useMediaQuery } from '../hooks/useMediaQuery';
 import { observer } from 'mobx-react';
 import { userStore, UserStore } from '../store/UserStore';
 import { useHistory } from 'react-router-dom';
@@ -13,12 +13,12 @@ type StoreType = {
 
 const Navbar = observer(
   ({ userStore }: StoreType): JSX.Element => {
-    const isSmallScreen = useMediaQuery('(max-width: 700px)');
+    const isSmallScreen = useMediaQuery(`(max-width: ${SMALL_SCREEN_WIDTH}px)`);
     const history = useHistory();
 
     const buttonStyle: CSS.Properties = {
       width: '120px',
-      display: userStore.isLoggedIn ? 'none' : 'inline',
+      display: userStore.isLoggedIn || isSmallScreen ? 'none' : 'inline',
     };
 
     const avatarStyle: CSS.Properties = {
@@ -27,7 +27,6 @@ const Navbar = observer(
 
     return (
       <PageHeader
-        className="site-page-header"
         title="Shopping List"
         subTitle={isSmallScreen ? '' : 'Make your shopping plan smarter'}
         extra={[
@@ -48,7 +47,7 @@ const Navbar = observer(
           </Button>,
           <span key="3" style={avatarStyle}>
             <Avatar icon={<UserOutlined />} />
-            {userStore.email}
+            {!isSmallScreen && userStore.email}
           </span>,
         ]}
       />

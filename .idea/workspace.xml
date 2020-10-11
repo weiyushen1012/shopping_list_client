@@ -21,10 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ba96a672-ec6d-4585-8860-af2372db81d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/UserStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UserStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -98,7 +98,12 @@
       <updated>1601682457421</updated>
       <workItem from="1601682458718" duration="564000" />
       <workItem from="1601683078243" duration="19110000" />
-      <workItem from="1601787747297" duration="3128000" />
+      <workItem from="1601787747297" duration="4094000" />
+      <workItem from="1601839746798" duration="10000" />
+      <workItem from="1601852906917" duration="1952000" />
+      <workItem from="1602426064577" duration="85000" />
+      <workItem from="1602426186592" duration="840000" />
+      <workItem from="1602440071393" duration="1398000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1601683367491</created>
@@ -163,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601790094687</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add signup logic">
+      <created>1601791323445</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601791323445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,13 +203,18 @@
     <MESSAGE value="should redirect to dashboard after logging in" />
     <MESSAGE value="add logged in avatar" />
     <MESSAGE value="create sign up page" />
-    <option name="LAST_COMMIT_MESSAGE" value="create sign up page" />
+    <MESSAGE value="add signup logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="add signup logic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="322" key="#Prettier" timestamp="1601683015078">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="436" y="322" key="#Prettier/0.23.1440.877@0.23.1440.877" timestamp="1601683015078" />
+    <state x="408" y="204" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602426078833">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="408" y="204" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.877@0.23.1440.877" timestamp="1602426078833" />
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601746146266">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -206,22 +223,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1601789149291" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1601787897688">
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1602440232538">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1601787897688" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1601787897687">
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602440232538" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1602440232538">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1601787897687" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1601787897687">
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602440232538" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1602440232537">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1601787897687" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1601787897688">
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602440232537" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1602440232538">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1601787897688" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602440232538" />
     <state width="1398" height="286" key="GridCell.Tab.1.bottom" timestamp="1601683277337">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -270,13 +287,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="286" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1601683277344" />
-    <state x="221" y="100" key="SettingsEditor" timestamp="1601683225946">
+    <state x="221" y="100" key="SettingsEditor" timestamp="1601937025858">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1601683225946" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601790101501">
+    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1601937025858" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601791329242">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1601790101501" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1601791329242" />
   </component>
 </project>

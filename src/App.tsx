@@ -42,5 +42,4 @@ const App = observer(
     );
   }
 );
-
 export default () => <App userStore={userStore} />;
