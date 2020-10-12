@@ -20,11 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba96a672-ec6d-4585-8860-af2372db81d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/avatar/avatar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/avatar/avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/ShoppingListStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/configs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UserStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UserStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -63,12 +66,13 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/avatar" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/login" />
     </key>
@@ -103,7 +107,7 @@
       <workItem from="1601852906917" duration="1952000" />
       <workItem from="1602426064577" duration="85000" />
       <workItem from="1602426186592" duration="840000" />
-      <workItem from="1602440071393" duration="1398000" />
+      <workItem from="1602440071393" duration="14262000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1601683367491</created>
@@ -175,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601791323445</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="set up dashboard">
+      <created>1602451140473</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602451140473</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +215,8 @@
     <MESSAGE value="add logged in avatar" />
     <MESSAGE value="create sign up page" />
     <MESSAGE value="add signup logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="add signup logic" />
+    <MESSAGE value="set up dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up dashboard" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="322" key="#Prettier" timestamp="1601683015078">
@@ -287,13 +299,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="286" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1601683277344" />
-    <state x="221" y="100" key="SettingsEditor" timestamp="1601937025858">
+    <state x="221" y="100" key="SettingsEditor" timestamp="1602453314421">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1601937025858" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601791329242">
+    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1602453314421" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1602451148773">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1601791329242" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1602451148773" />
   </component>
 </project>

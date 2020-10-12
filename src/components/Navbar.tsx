@@ -5,7 +5,7 @@ import { SMALL_SCREEN_WIDTH, useMediaQuery } from '../hooks/useMediaQuery';
 import { observer } from 'mobx-react';
 import { userStore, UserStore } from '../store/UserStore';
 import { useHistory } from 'react-router-dom';
-import { UserOutlined } from '@ant-design/icons';
+import avatar2 from '../avatar/avatar2.png';
 
 type StoreType = {
   userStore: UserStore;
@@ -46,7 +46,7 @@ const Navbar = observer(
             Sign Up
           </Button>,
           <span key="3" style={avatarStyle}>
-            <Avatar icon={<UserOutlined />} />
+            <Avatar shape="square" src={avatar2} />
             {!isSmallScreen && userStore.email}
           </span>,
         ]}

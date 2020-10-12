@@ -1,4 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
+import { endpoint } from '../utils/configs';
 
 export type AuthenticationValuesType = {
   email: string;
@@ -15,15 +16,13 @@ type LoginFailureData = {
   message: string;
 };
 
-const endpoint = 'http://localhost:5000';
-
 export class UserStore {
   token: string = '';
   isLoggedIn: boolean = false;
   error: string = '';
   loading: boolean = false;
   email: string | null = null;
-  userId: number | null = null;
+  userId: number = 0;
 
   constructor() {
     makeAutoObservable(this);
