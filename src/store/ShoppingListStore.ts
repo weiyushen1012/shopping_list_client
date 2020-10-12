@@ -34,7 +34,10 @@ type ShoppingListItemDataType = {
 };
 
 type ShoppingList = {
-  [id: string]: ShoppingListItem[];
+  [id: string]: {
+    created: Date;
+    listItems: ShoppingListItem[];
+  };
 };
 
 export class ShoppingListStore {
@@ -53,7 +56,7 @@ export class ShoppingListStore {
 
   getActiveShoppingListItems() {
     return (
-      this.shoppingLists[this.activeShoppingListId]?.map((list) => ({
+      this.shoppingLists[this.activeShoppingListId]?.listItems.map((list) => ({
         ...list,
         key: list.id,
       })) || []
@@ -61,7 +64,10 @@ export class ShoppingListStore {
   }
 
   getShoppingListSelections() {
-    return Object.keys(this.shoppingLists);
+    return Object.keys(this.shoppingLists).map((id) => ({
+      id,
+      created: this.shoppingLists[id].created,
+    }));
   }
 
   async loadSoppingLists(userId: number, token: string) {
@@ -89,16 +95,19 @@ export class ShoppingListStore {
 
         const shoppingListItemsData: ShoppingListItemDataType[] = await responseListItems.json();
 
-        this.shoppingLists[shoppingList.id] = shoppingListItemsData.map(
-          (data: ShoppingListItemDataType) =>
-            new ShoppingListItem(
-              data.id,
-              data.name,
-              data.category,
-              data.quantity,
-              data.finished
-            )
-        );
+        this.shoppingLists[shoppingList.id] = {
+          created: new Date(shoppingList.created),
+          listItems: shoppingListItemsData.map(
+            (data: ShoppingListItemDataType) =>
+              new ShoppingListItem(
+                data.id,
+                data.name,
+                data.category,
+                data.quantity,
+                data.finished
+              )
+          ),
+        };
       });
     }
   }

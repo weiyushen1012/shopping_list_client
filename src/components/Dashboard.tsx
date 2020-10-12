@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CSS from 'csstype';
 import { observer } from 'mobx-react';
 import { useHistory } from 'react-router-dom';
 import { userStore, UserStore } from '../store/UserStore';
-import { Table, Select, Button } from 'antd';
+import { Table, Select, Button, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import {
   ShoppingListStore,
   shoppingListStore,
 } from '../store/ShoppingListStore';
 import { SMALL_SCREEN_WIDTH, useMediaQuery } from '../hooks/useMediaQuery';
+import { formatDate } from '../utils/dateFormatter';
+import CreateListModel from './Dashboard/CreateListItemModal';
 
 const { Option } = Select;
 
@@ -38,6 +40,9 @@ const Dashboard = observer(
     const history = useHistory();
     const isSmallScreen = useMediaQuery(`(max-width: ${SMALL_SCREEN_WIDTH}px)`);
     const isLoggedIn = userStore.isLoggedIn;
+    const [newListModelVisible, setNewListModelVisible] = useState<boolean>(
+      false
+    );
 
     const dashboardStyles: CSS.Properties = {
       paddingLeft: '1em',
@@ -78,20 +83,29 @@ const Dashboard = observer(
             onChange={handleActiveShoppingListChange}
             style={selectStyles}
           >
-            {shoppingListStore.getShoppingListSelections().map((selection) => (
-              <Option key={selection} value={selection}>
-                {selection}
+            {shoppingListStore.getShoppingListSelections().map((data) => (
+              <Option key={data.id} value={data.id}>
+                {formatDate(data.created)}
               </Option>
             ))}
           </Select>
-          <Button type="dashed">
-            <PlusOutlined /> {!isSmallScreen && 'Create New Shopping List'}
+          <Button type="dashed" onClick={() => setNewListModelVisible(true)}>
+            <PlusOutlined /> {!isSmallScreen && 'Create New List'}
           </Button>
         </div>
         <Table
           columns={columns}
           dataSource={shoppingListStore.getActiveShoppingListItems()}
+          size="middle"
         />
+        <Modal
+          title={formatDate(new Date())}
+          visible={newListModelVisible}
+          footer={[]}
+          onCancel={() => setNewListModelVisible(false)}
+        >
+          <CreateListModel />
+        </Modal>
       </div>
     );
   }
