@@ -23,7 +23,9 @@ const weekdayNames = [
   'Saturday',
 ];
 
-export const formatDate = (date: Date) =>
-  `${weekdayNames[date.getDay()]} ${
-    monthNames[date.getMonth()]
-  } ${date.getDate()}, ${date.getFullYear()}`;
+export const formatDateTime = (date: Date) =>
+  date
+    ? `${weekdayNames[date.getDay()]} ${
+        monthNames[date.getMonth()]
+      } ${date.getDate()}, ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`
+    : '';

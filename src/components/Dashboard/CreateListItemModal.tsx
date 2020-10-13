@@ -1,10 +1,10 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import { userStore, UserStore } from '../../store/UserStore';
+import { userStore, UserStore } from '../../stores/UserStore';
 import {
   shoppingListStore,
   ShoppingListStore,
-} from '../../store/ShoppingListStore';
+} from '../../stores/ShoppingListStore';
 
 type StoreType = {
   userStore: UserStore;

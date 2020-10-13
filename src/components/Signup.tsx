@@ -6,7 +6,7 @@ import {
   AuthenticationValuesType,
   userStore,
   UserStore,
-} from '../store/UserStore';
+} from '../stores/UserStore';
 import { observer } from 'mobx-react';
 
 type StoreType = {

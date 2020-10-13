@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { endpoint } from '../utils/configs';
+import { message } from 'antd';
 
 class ShoppingListItem {
   id: string;
@@ -43,6 +44,7 @@ type ShoppingList = {
 export class ShoppingListStore {
   shoppingLists: ShoppingList = {};
   activeShoppingListId: string = '';
+  isCreatingNewList: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -70,7 +72,32 @@ export class ShoppingListStore {
     }));
   }
 
-  async loadSoppingLists(userId: number, token: string) {
+  async addShoppingList(userId: number, token: string) {
+    runInAction(() => {
+      this.isCreatingNewList = true;
+    });
+
+    const response = await fetch(
+      `${endpoint}/add_shopping_list/${userId}?token=${token}`,
+      {
+        method: 'POST',
+      }
+    );
+
+    const newShoppingList = await response.json();
+
+    await this.getShoppingListsAndItems(userId, token);
+
+    this.setActiveShoppingListId(newShoppingList.id);
+
+    message.success('New shopping list is created!', 2);
+
+    runInAction(() => {
+      this.isCreatingNewList = false;
+    });
+  }
+
+  async getShoppingListsAndItems(userId: number, token: string) {
     const responseLists = await fetch(
       `${endpoint}/get_shopping_lists/${userId}?token=${token}`,
       {
@@ -85,16 +112,15 @@ export class ShoppingListStore {
     }
 
     for (let shoppingList of shoppingLists) {
+      const responseListItems = await fetch(
+        `${endpoint}/get_shopping_list_items/${shoppingList.id}?token=${token}`,
+        {
+          method: 'GET',
+        }
+      );
+
+      const shoppingListItemsData: ShoppingListItemDataType[] = await responseListItems.json();
       await runInAction(async () => {
-        const responseListItems = await fetch(
-          `${endpoint}/get_shopping_list_items/${shoppingList.id}?token=${token}`,
-          {
-            method: 'GET',
-          }
-        );
-
-        const shoppingListItemsData: ShoppingListItemDataType[] = await responseListItems.json();
-
         this.shoppingLists[shoppingList.id] = {
           created: new Date(shoppingList.created),
           listItems: shoppingListItemsData.map(

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import CSS from 'csstype';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-import { userStore, UserStore } from './store/UserStore';
+import { userStore, UserStore } from './stores/UserStore';
 import { observer } from 'mobx-react';
 import Signup from './components/Signup';
 

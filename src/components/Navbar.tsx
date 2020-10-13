@@ -3,7 +3,7 @@ import CSS from 'csstype';
 import { PageHeader, Button, Avatar } from 'antd';
 import { SMALL_SCREEN_WIDTH, useMediaQuery } from '../hooks/useMediaQuery';
 import { observer } from 'mobx-react';
-import { userStore, UserStore } from '../store/UserStore';
+import { userStore, UserStore } from '../stores/UserStore';
 import { useHistory } from 'react-router-dom';
 import avatar1 from '../avatar/avatar1.png';
 
