@@ -86,7 +86,12 @@ export class ShoppingListStore {
 
     const newShoppingList = await response.json();
 
-    await this.getShoppingListsAndItems(userId, token);
+    runInAction(() => {
+      this.shoppingLists[newShoppingList.id] = {
+        created: new Date(newShoppingList.created),
+        listItems: [],
+      };
+    });
 
     this.setActiveShoppingListId(newShoppingList.id);
 
@@ -95,6 +100,27 @@ export class ShoppingListStore {
     runInAction(() => {
       this.isCreatingNewList = false;
     });
+  }
+
+  async deleteShoppingList(
+    shoppingListId: string,
+    userId: number,
+    token: string
+  ) {
+    await fetch(
+      `${endpoint}/delete_shopping_list/${shoppingListId}?token=${token}`,
+      {
+        method: 'DELETE',
+      }
+    );
+
+    runInAction(() => {
+      delete this.shoppingLists[shoppingListId];
+    });
+
+    this.setActiveShoppingListId('');
+
+    message.success('Delete succeed', 2);
   }
 
   async getShoppingListsAndItems(userId: number, token: string) {

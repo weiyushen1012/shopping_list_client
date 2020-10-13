@@ -21,17 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ba96a672-ec6d-4585-8860-af2372db81d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/CreateListItemModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/CreateListItemModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useMediaQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ShoppingListStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/ShoppingListStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/UserStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/UserStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/dateFormatter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/dateFormatter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/ShoppingListStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/ShoppingListStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +102,7 @@
       <workItem from="1601852906917" duration="1952000" />
       <workItem from="1602426064577" duration="85000" />
       <workItem from="1602426186592" duration="840000" />
-      <workItem from="1602440071393" duration="26014000" />
+      <workItem from="1602440071393" duration="27611000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1601683367491</created>
@@ -204,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602478370615</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="improve create new list feature">
+      <created>1602547328606</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602547328606</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +234,8 @@
     <MESSAGE value="set up dashboard" />
     <MESSAGE value="show shopping list in dashboard" />
     <MESSAGE value="add create new list feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="add create new list feature" />
+    <MESSAGE value="improve create new list feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve create new list feature" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="322" key="#Prettier" timestamp="1601683015078">
@@ -251,26 +250,26 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1601746146266" />
-    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1601789149291">
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1602547596920">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1601789149291" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1602546078065">
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1602547596920" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1602547281594">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602546078065" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1602546078064">
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602547281594" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1602547281594">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602546078064" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1602546078063">
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602547281594" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1602547281593">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602546078063" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1602546078064">
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602547281593" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1602547281594">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602546078064" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602547281594" />
     <state width="1398" height="286" key="GridCell.Tab.1.bottom" timestamp="1601683277337">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -323,9 +322,9 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1602453314421" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1602478375898">
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1602547335086">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1602478375898" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1602547335086" />
   </component>
 </project>

@@ -131,7 +131,14 @@ const Dashboard = observer(
               type="dashed"
               style={{ marginRight: '1em' }}
               danger
-              disabled
+              disabled={!shoppingListStore.activeShoppingListId}
+              onClick={() =>
+                shoppingListStore.deleteShoppingList(
+                  shoppingListStore.activeShoppingListId,
+                  userStore.userId,
+                  userStore.token
+                )
+              }
             >
               <DeleteFilled /> {isVerySmallScreen ? '' : 'Delete List'}
             </Button>
