@@ -3,7 +3,7 @@ import CSS from 'csstype';
 import { observer } from 'mobx-react';
 import { useHistory } from 'react-router-dom';
 import { userStore, UserStore } from '../stores/UserStore';
-import { Table, Select, Button, Modal, Progress } from 'antd';
+import { Table, Select, Button, Modal } from 'antd';
 import { PlusOutlined, DeleteFilled } from '@ant-design/icons';
 import {
   ShoppingListStore,
@@ -106,11 +106,14 @@ const Dashboard = observer(
             onChange={handleActiveShoppingListChange}
             style={selectStyles}
           >
-            {shoppingListStore.getShoppingListSelections().map((data) => (
-              <Option key={data.id} value={data.id}>
-                {formatDateTime(data.created)}
-              </Option>
-            ))}
+            {shoppingListStore
+              .getShoppingListSelections()
+              .reverse()
+              .map((data) => (
+                <Option key={data.id} value={data.id}>
+                  {formatDateTime(data.created)}
+                </Option>
+              ))}
           </Select>
           <div style={buttonGroupStyles}>
             <Button
@@ -148,7 +151,6 @@ const Dashboard = observer(
             </Button>
           </div>
         </div>
-        <Progress percent={0} />
         <Table
           pagination={false}
           columns={columns}
